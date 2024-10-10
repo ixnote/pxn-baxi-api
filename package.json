@@ -1,0 +1,34 @@
+{
+  "name": "pxn-baxi-api",
+  "version": "1.0.0",
+  "description": "Node.js Restful CRUD API with Node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "debug": "nodemon --inspect-brk server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "rest",
+    "api",
+    "mongodb"
+  ],
+  "author": "mlayer",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "moment": "^2.29.1"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
