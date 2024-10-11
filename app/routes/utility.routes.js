@@ -4,7 +4,7 @@ const router = express.Router();
 
 router
   .get("/getAllBillerCategory", UtilityCntrl.getAllBillerCategory)
-  .get("/getBillerType", UtilityCntrl.getBillerType)
+  .get("/getBillerType/:type", UtilityCntrl.getBillerType)
   .post("/accountVerify", UtilityCntrl.accountVerify)
   .post("/airtimeRequest", UtilityCntrl.airtimeRequest)
   .post("/getDataBundles", UtilityCntrl.getDataBundles)
