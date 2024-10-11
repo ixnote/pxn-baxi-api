@@ -36,8 +36,8 @@ const options = {
 export const getAllBillerCategory = asyncHandler(async (req, res, next) => {
   console.log("hereeeeeee");
   const response = await axios.get(`${baseURL}/billers/category/all`, options);
-  console.log("🚀 ~ getBillerType ~ response:", response);
-  return res.status(200).send(response);
+  console.log("🚀 ~ getBillerType ~ response:", response.data);
+  return res.status(200).send(response.data);
 });
 
 export const getBillerType = asyncHandler(async (req, res, next) => {
@@ -49,8 +49,8 @@ export const getBillerType = asyncHandler(async (req, res, next) => {
     options
   );
 
-  console.log("🚀 ~ getBillerType ~ response:", response);
-  return res.status(200).send(response);
+  console.log("🚀 ~ getBillerType ~ response:", response.data);
+  return res.status(200).send(response.data);
 });
 
 export const accountVerify = asyncHandler(async (req, res, next) => {
@@ -59,8 +59,8 @@ export const accountVerify = asyncHandler(async (req, res, next) => {
   const encodedURI = encodeURI(uri);
   const response = await axios.post(encodedURI, payload, options);
 
-  console.log("🚀 ~ getBillerType ~ response:", response);
-  return res.status(200).send(response);
+  console.log("🚀 ~ getBillerType ~ response:", response.data);
+  return res.status(200).send(response.data);
 });
 
 //AIRTIME ENDPOINTS
@@ -71,8 +71,8 @@ export const airtimeRequest = asyncHandler(async (req, res, next) => {
   const encodedURI = encodeURI(uri);
   const response = await axios.post(encodedURI, payload, options);
 
-  console.log("🚀 ~ getBillerType ~ response:", response);
-  return res.status(200).send(response);
+  console.log("🚀 ~ getBillerType ~ response:", response.data);
+  return res.status(200).send(response.data);
 });
 
 //DATABUNDLE ENDPOINTS
@@ -84,8 +84,8 @@ export const getDataBundles = asyncHandler(async (req, res, next) => {
   const encodedURI = encodeURI(uri);
   const response = await axios.post(encodedURI, { service_type }, options);
 
-  console.log("🚀 ~ getBillerType ~ response:", response);
-  return res.status(200).send(response);
+  console.log("🚀 ~ getBillerType ~ response:", response.data);
+  return res.status(200).send(response.data);
 });
 
 export const databundleRequest = asyncHandler(
@@ -94,8 +94,8 @@ export const databundleRequest = asyncHandler(
     const encodedURI = encodeURI(uri);
     const response = await axios.post(encodedURI, payload, options);
 
-    console.log("🚀 ~ getBillerType ~ response:", response);
-    return res.status(200).send(response);
+    console.log("🚀 ~ getBillerType ~ response:", response.data);
+    return res.status(200).send(response.data);
   }
 );
 
@@ -108,8 +108,8 @@ export const getElectricityBillers = asyncHandler(async (req, res, next) => {
     billers`,
     options
   );
-  console.log("🚀 ~ getBillerType ~ response:", response);
-  return res.status(200).send(response);
+  console.log("🚀 ~ getBillerType ~ response:", response.data);
+  return res.status(200).send(response.data);
 });
 
 export const elecricityRequest = asyncHandler(async (req, res, next) => {
@@ -118,8 +118,8 @@ export const elecricityRequest = asyncHandler(async (req, res, next) => {
   const encodedURI = encodeURI(uri);
   const response = await axios.post(encodedURI, payload, options);
 
-  console.log("🚀 ~ getBillerType ~ response:", response);
-  return res.status(200).send(response);
+  console.log("🚀 ~ getBillerType ~ response:", response.data);
+  return res.status(200).send(response.data);
 });
 
 //CABLE TV ENDPOINTS
@@ -131,8 +131,8 @@ export const getMultichoiceList = asyncHandler(async (req, res, nex) => {
   const encodedURI = encodeURI(uri);
   const response = await axios.post(encodedURI, { service_type }, options);
 
-  console.log("🚀 ~ getBillerType ~ response:", response);
-  return res.status(200).send(response);
+  console.log("🚀 ~ getBillerType ~ response:", response.data);
+  return res.status(200).send(response.data);
 });
 
 export const getMultichoiceAdons = asyncHandler(async (req, res, next) => {
@@ -142,8 +142,8 @@ export const getMultichoiceAdons = asyncHandler(async (req, res, next) => {
   const encodedURI = encodeURI(uri);
   const response = await axios.post(encodedURI, payload, options);
 
-  console.log("🚀 ~ getBillerType ~ response:", response);
-  return res.status(200).send(response);
+  console.log("🚀 ~ getBillerType ~ response:", response.data);
+  return res.status(200).send(response.data);
 });
 
 export const cabletvRequest = asyncHandler(async (req, res, next) => {
@@ -152,6 +152,6 @@ export const cabletvRequest = asyncHandler(async (req, res, next) => {
   const encodedURI = encodeURI(uri);
   const response = await axios.post(encodedURI, payload, options);
 
-  console.log("🚀 ~ getBillerType ~ response:", response);
-  return res.status(200).send(response);
+  console.log("🚀 ~ getBillerType ~ response:", response.data);
+  return res.status(200).send(response.data);
 });
