@@ -29,13 +29,13 @@ const options = {
 //     },
 //   });
 
-//   const response = axios.post(`${baseURL}/api/v1/auth/login`, {},
+//   const response = await axios.post(`${baseURL}/api/v1/auth/login`, {},
 
 // });
 
 export const getAllBillerCategory = asyncHandler(async (req, res, next) => {
   console.log("hereeeeeee");
-  const response = axios.get(`${baseURL}/billers/category/all`, options);
+  const response = await axios.get(`${baseURL}/billers/category/all`, options);
   console.log("🚀 ~ getBillerType ~ response:", response);
   return res.status(200).send(response);
 });
@@ -56,7 +56,7 @@ export const getBillerType = asyncHandler(async (req, res, next) => {
 export const accountVerify = asyncHandler(async (payload) => {
   const uri = `${baseURL}/services/namefinder/query`;
   const encodedURI = encodeURI(uri);
-  const response = axios.post(encodedURI, payload, options);
+  const response = await axios.post(encodedURI, payload, options);
 
   console.log("🚀 ~ getBillerType ~ response:", response);
   return res.status(200).send(response);
@@ -67,7 +67,7 @@ export const accountVerify = asyncHandler(async (payload) => {
 export const airtimeRequest = asyncHandler(async ({ user_id, ...payload }) => {
   const uri = `${baseURL}/services/airtime/request`;
   const encodedURI = encodeURI(uri);
-  const response = axios.post(encodedURI, payload, options);
+  const response = await axios.post(encodedURI, payload, options);
 
   console.log("🚀 ~ getBillerType ~ response:", response);
   return res.status(200).send(response);
@@ -79,7 +79,7 @@ export const getDataBundles = asyncHandler(async (service_type) => {
   //console.log(auth)
   const uri = `${baseURL}/services/databundle/bundles`;
   const encodedURI = encodeURI(uri);
-  const response = axios.post(encodedURI, { service_type }, options);
+  const response = await axios.post(encodedURI, { service_type }, options);
 
   console.log("🚀 ~ getBillerType ~ response:", response);
   return res.status(200).send(response);
@@ -89,7 +89,7 @@ export const databundleRequest = asyncHandler(
   async ({ user_id, ...payload }) => {
     const uri = `${baseURL}/services/databundle/request`;
     const encodedURI = encodeURI(uri);
-    const response = axios.post(encodedURI, payload, options);
+    const response = await axios.post(encodedURI, payload, options);
 
     console.log("🚀 ~ getBillerType ~ response:", response);
     return res.status(200).send(response);
@@ -100,7 +100,7 @@ export const databundleRequest = asyncHandler(
 
 export const getElectricityBillers = asyncHandler(async () => {
   //console.log(auth)
-  const response = axios.get(
+  const response = await axios.get(
     `${baseURL}/services/electricity/
     billers`,
     options
@@ -112,7 +112,7 @@ export const getElectricityBillers = asyncHandler(async () => {
 export const elecricityRequest = asyncHandler(async (payload) => {
   const uri = `${baseURL}/services/electricity/request`;
   const encodedURI = encodeURI(uri);
-  const response = axios.post(encodedURI, payload, options);
+  const response = await axios.post(encodedURI, payload, options);
 
   console.log("🚀 ~ getBillerType ~ response:", response);
   return res.status(200).send(response);
@@ -124,7 +124,7 @@ export const getMultichoiceList = asyncHandler(async (service_type) => {
   //console.log(auth)
   const uri = `${baseURL}/services/multichoice/list`;
   const encodedURI = encodeURI(uri);
-  const response = axios.post(encodedURI, { service_type }, options);
+  const response = await axios.post(encodedURI, { service_type }, options);
 
   console.log("🚀 ~ getBillerType ~ response:", response);
   return res.status(200).send(response);
@@ -134,7 +134,7 @@ export const getMultichoiceAdons = asyncHandler(async (payload) => {
   //console.log(auth)
   const uri = `${baseURL}/services/multichoice/addons`;
   const encodedURI = encodeURI(uri);
-  const response = axios.post(encodedURI, payload, options);
+  const response = await axios.post(encodedURI, payload, options);
 
   console.log("🚀 ~ getBillerType ~ response:", response);
   return res.status(200).send(response);
@@ -143,7 +143,7 @@ export const getMultichoiceAdons = asyncHandler(async (payload) => {
 export const cabletvRequest = asyncHandler(async (payload) => {
   const uri = `${baseURL}/services/multichoice/request`;
   const encodedURI = encodeURI(uri);
-  const response = axios.post(encodedURI, payload, options);
+  const response = await axios.post(encodedURI, payload, options);
 
   console.log("🚀 ~ getBillerType ~ response:", response);
   return res.status(200).send(response);
