@@ -41,7 +41,7 @@ export const getAllBillerCategory = asyncHandler(async (req, res, next) => {
 });
 
 export const getBillerType = asyncHandler(async (req, res, next) => {
-  const { type } = req.body;
+  const { type } = req.params;
   console.log("🚀 ~ getBillerType ~ type:", type);
   //console.log(auth)
   const response = await axios.get(
@@ -53,7 +53,8 @@ export const getBillerType = asyncHandler(async (req, res, next) => {
   return res.status(200).send(response);
 });
 
-export const accountVerify = asyncHandler(async (payload) => {
+export const accountVerify = asyncHandler(async (req, res, next) => {
+  const payload = req.body;
   const uri = `${baseURL}/services/namefinder/query`;
   const encodedURI = encodeURI(uri);
   const response = await axios.post(encodedURI, payload, options);
@@ -64,7 +65,8 @@ export const accountVerify = asyncHandler(async (payload) => {
 
 //AIRTIME ENDPOINTS
 
-export const airtimeRequest = asyncHandler(async ({ user_id, ...payload }) => {
+export const airtimeRequest = asyncHandler(async (req, res, next) => {
+  const { user_id, ...payload } = req.body;
   const uri = `${baseURL}/services/airtime/request`;
   const encodedURI = encodeURI(uri);
   const response = await axios.post(encodedURI, payload, options);
@@ -75,7 +77,8 @@ export const airtimeRequest = asyncHandler(async ({ user_id, ...payload }) => {
 
 //DATABUNDLE ENDPOINTS
 
-export const getDataBundles = asyncHandler(async (service_type) => {
+export const getDataBundles = asyncHandler(async (req, res, next) => {
+  const { service_type } = req.body;
   //console.log(auth)
   const uri = `${baseURL}/services/databundle/bundles`;
   const encodedURI = encodeURI(uri);
@@ -98,7 +101,7 @@ export const databundleRequest = asyncHandler(
 
 //ELECTRICITY ENDPOINTS
 
-export const getElectricityBillers = asyncHandler(async () => {
+export const getElectricityBillers = asyncHandler(async (req, res, next) => {
   //console.log(auth)
   const response = await axios.get(
     `${baseURL}/services/electricity/
@@ -109,7 +112,8 @@ export const getElectricityBillers = asyncHandler(async () => {
   return res.status(200).send(response);
 });
 
-export const elecricityRequest = asyncHandler(async (payload) => {
+export const elecricityRequest = asyncHandler(async (req, res, next) => {
+  const payload = req.body;
   const uri = `${baseURL}/services/electricity/request`;
   const encodedURI = encodeURI(uri);
   const response = await axios.post(encodedURI, payload, options);
@@ -120,7 +124,8 @@ export const elecricityRequest = asyncHandler(async (payload) => {
 
 //CABLE TV ENDPOINTS
 
-export const getMultichoiceList = asyncHandler(async (service_type) => {
+export const getMultichoiceList = asyncHandler(async (req, res, nex) => {
+  const { service_type } = req.body;
   //console.log(auth)
   const uri = `${baseURL}/services/multichoice/list`;
   const encodedURI = encodeURI(uri);
@@ -130,7 +135,8 @@ export const getMultichoiceList = asyncHandler(async (service_type) => {
   return res.status(200).send(response);
 });
 
-export const getMultichoiceAdons = asyncHandler(async (payload) => {
+export const getMultichoiceAdons = asyncHandler(async (req, res, next) => {
+  const payload = req.body;
   //console.log(auth)
   const uri = `${baseURL}/services/multichoice/addons`;
   const encodedURI = encodeURI(uri);
@@ -140,7 +146,8 @@ export const getMultichoiceAdons = asyncHandler(async (payload) => {
   return res.status(200).send(response);
 });
 
-export const cabletvRequest = asyncHandler(async (payload) => {
+export const cabletvRequest = asyncHandler(async (req, res, next) => {
+  const payload = req.body;
   const uri = `${baseURL}/services/multichoice/request`;
   const encodedURI = encodeURI(uri);
   const response = await axios.post(encodedURI, payload, options);
