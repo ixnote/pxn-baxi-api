@@ -104,8 +104,7 @@ export const databundleRequest = asyncHandler(
 export const getElectricityBillers = asyncHandler(async (req, res, next) => {
   //console.log(auth)
   const response = await axios.get(
-    `${baseURL}/services/electricity/
-    billers`,
+    `${baseURL}/services/electricity/billers`,
     options
   );
   console.log("🚀 ~ getBillerType ~ response:", response.data);
