@@ -88,16 +88,16 @@ export const getDataBundles = asyncHandler(async (req, res, next) => {
   return res.status(200).send(response.data);
 });
 
-export const databundleRequest = asyncHandler(
-  async ({ user_id, ...payload }) => {
-    const uri = `${baseURL}/services/databundle/request`;
-    const encodedURI = encodeURI(uri);
-    const response = await axios.post(encodedURI, payload, options);
+export const databundleRequest = asyncHandler(async (req, res, next) => {
+  const { user_id, ...payload } = req.body;
+  console.log("🚀 ~ payload:", payload);
+  const uri = `${baseURL}/services/databundle/request`;
+  const encodedURI = encodeURI(uri);
+  const response = await axios.post(encodedURI, payload, options);
 
-    console.log("🚀 ~ getBillerType ~ response:", response.data);
-    return res.status(200).send(response.data);
-  }
-);
+  console.log("🚀 ~ getBillerType ~ response:", response.data);
+  return res.status(200).send(response.data);
+});
 
 //ELECTRICITY ENDPOINTS
 
